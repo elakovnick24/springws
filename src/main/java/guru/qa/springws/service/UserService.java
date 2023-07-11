@@ -5,7 +5,6 @@ import guru.qa.springws.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 
 @Service
 public class UserService implements IUserService {
@@ -18,9 +17,6 @@ public class UserService implements IUserService {
     }
 
     public User getUser() {
-        User usr = new User();
-        usr.setUsername("dima");
-        usr.setDate(new Date());
-        return usr;
+        return User.formUserEntity(ur.findByUsername("dima"));
     }
 }
