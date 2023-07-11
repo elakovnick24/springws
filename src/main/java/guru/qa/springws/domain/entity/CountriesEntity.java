@@ -9,7 +9,7 @@ import java.util.UUID;
 @Table(name = "countries", schema = "public", catalog = "country-geo")
 public class CountriesEntity {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "id")
     private UUID id;

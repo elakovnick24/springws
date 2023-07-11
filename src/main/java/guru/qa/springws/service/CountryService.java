@@ -20,8 +20,8 @@ public class CountryService implements ICountryService {
     }
 
     @Override
-    public List<Country> getAll() {
-        List<CountriesEntity> countriesEntityList = cr.getAll();
+    public List<Country> getAllCountry() {
+        List<CountriesEntity> countriesEntityList = cr.findAll();
         List<Country> countryList = new ArrayList<>();
         for (CountriesEntity countriesEntity : countriesEntityList) {
             countryList.add(Country.formCountriesEntity(countriesEntity));

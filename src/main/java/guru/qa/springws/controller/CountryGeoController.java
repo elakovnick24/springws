@@ -2,11 +2,9 @@ package guru.qa.springws.controller;
 
 import guru.qa.springws.domain.Country;
 import guru.qa.springws.service.ICountryService;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,19 +17,19 @@ public class CountryGeoController {
         this.countryService = countryService;
     }
 
-    @GetMapping("/country/{code}")
-    public Country getCountryByCode(@PathVariable("code") String code) {
-        return countryService.getByCountryCode(code);
+    @GetMapping("/country/code")
+    public Country getCountryByCode() {
+        return countryService.getByCountryCode("GE");
     }
 
-    @GetMapping("/country/{name}")
-    public Country getCountryByName(@PathVariable("name") String name) {
-        return countryService.getByCountryName(name);
+    @GetMapping("/country/name")
+    public Country getCountryByName() {
+        return countryService.getByCountryName("Georgia");
     }
 
     @GetMapping("/all")
     public List<Country> getAllCountries() {
-        return countryService.getAll();
+        return countryService.getAllCountry();
     }
 
 }

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ICountryService {
 
-    List<Country> getAll();
+    List<Country> getAllCountry();
 
     Country getByCountryCode(String code);
 
